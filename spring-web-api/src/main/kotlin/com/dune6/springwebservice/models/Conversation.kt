@@ -1,6 +1,7 @@
 package com.dune6.springwebservice.models
 
 import org.springframework.format.annotation.DateTimeFormat
+import java.time.Instant
 import java.util.*
 import javax.persistence.*
 
@@ -16,7 +17,7 @@ class Conversation(
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long = 0,
     @DateTimeFormat
-    val createdAt: Date
+    val createdAt: Date = Date.from(Instant.now())
 ) {
     @OneToMany(mappedBy = "conversation", targetEntity = Message::class)
     private var messages: Collection<Message>? = null
