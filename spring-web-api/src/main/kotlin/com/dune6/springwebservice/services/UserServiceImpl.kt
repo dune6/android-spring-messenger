@@ -45,7 +45,7 @@ class UserServiceImpl(val repository: UserRepository) : UserService {
     }
 
     @Throws(InvalidUserIdException::class)
-    override fun retrieveUserData(id: Long): User? {
+    override fun retrieveUserData(id: Long): User {
         val userOptional = repository.findById(id)
         if (userOptional.isPresent) {
             val user = userOptional.get()
