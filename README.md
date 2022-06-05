@@ -1,1 +1,1 @@
-# android-spring-messenger
+# spring-messenger
